@@ -935,6 +935,8 @@ func assertRequiredParametersSet(c *Config, errs *packer.MultiError) {
 	switch c.ManagedImageStorageAccountType {
 	case "", string(compute.StorageAccountTypesStandardLRS):
 		c.managedImageStorageAccountType = compute.StorageAccountTypesStandardLRS
+	case string(compute.StorageAccountTypesStandardSSDLRS):
+		c.managedImageStorageAccountType = compute.StorageAccountTypesStandardSSDLRS
 	case string(compute.StorageAccountTypesPremiumLRS):
 		c.managedImageStorageAccountType = compute.StorageAccountTypesPremiumLRS
 	default:
